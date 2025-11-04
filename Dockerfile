@@ -18,5 +18,5 @@ RUN dart compile exe bin/quote_app_backend.dart -o bin/quote_app_backend
 FROM scratch
 COPY --from=build /runtime/ /
 COPY --from=build /app/bin/quote_app_backend /app/bin/
-EXPOSE 5000
+EXPOSE 8080
 CMD ["/app/bin/quote_app_backend"]
