@@ -19,4 +19,4 @@ FROM scratch
 COPY --from=build /runtime/ /
 COPY --from=build /app/bin/quote_app_backend /app/bin/
 EXPOSE 5000
-CMD ["/app/bin/server"]
+CMD ["/app/bin/quote_app_backend"]

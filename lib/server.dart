@@ -6,7 +6,7 @@ import 'package:shelf/shelf_io.dart' as io;
 import 'package:shelf_router/shelf_router.dart';
 
 const hostname = "localhost";
-final port = int.parse(Platform.environment['PORT'] ?? '5000');
+final port = int.parse(Platform.environment['PORT'] ?? '8080');
 late final HttpServer server;
 
 final router = Router();
