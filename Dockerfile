@@ -12,11 +12,11 @@ RUN dart pub get
 COPY . .
 
 # Compile the server
-RUN dart compile exe bin/server.dart -o bin/server
+RUN dart compile exe bin/quote_app_backend.dart -o bin/quote_app_backend
 
 # Use a smaller runtime image
 FROM scratch
 COPY --from=build /runtime/ /
-COPY --from=build /app/bin/server /app/bin/
+COPY --from=build /app/bin/quote_app_backend /app/bin/
 EXPOSE 5000
 CMD ["/app/bin/server"]
