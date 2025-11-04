@@ -28,6 +28,5 @@ Future<Map<String, dynamic>> getRandomQuote() async {
 Future<Quote> getQuote() async {
   Map<String, dynamic> jsonData = await getRandomQuote();
   Quote quote = Quote.fromJson(jsonData);
-  print(quote);
   return quote;
 }
