@@ -5,7 +5,6 @@ import 'package:shelf/shelf.dart' as shelf;
 import 'package:shelf/shelf_io.dart' as io;
 import 'package:shelf_router/shelf_router.dart';
 
-const hostname = "localhost";
 final port = int.parse(Platform.environment['PORT'] ?? '8080');
 late final HttpServer server;
 
@@ -14,7 +13,7 @@ final router = Router();
 Future<void> createServer() async {
   await _getRandomQuote();
 
-  server = await io.serve(router.call, hostname, port);
+  server = await io.serve(router.call, InternetAddress.anyIPv4, port);
   print("Server created at $port");
 }
 
